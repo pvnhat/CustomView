@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/label_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="15dp"
+        android:text="A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/label_b"
+        app:layout_constraintHorizontal_bias=".7"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="15dp"
+        android:text="B"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_a"
+        app:layout_constraintEnd_toStartOf="@id/label_c"
+        app:layout_constraintStart_toEndOf="@id/label_a" />
+
+    <TextView
+        android:id="@+id/label_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D6AC2E"
+        android:padding="15dp"
+        android:text="C"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_b"
+        app:layout_constraintBottom_toTopOf="@id/label_d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_b" />
+
+    <TextView
+        android:id="@+id/label_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D6AC2E"
+        android:padding="15dp"
+        android:text="asdfasdfasfasdfadfasdfasdC"
+        app:layout_constraintStart_toStartOf="@id/label_c"
+        app:layout_constraintTop_toBottomOf="@id/label_c"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <com.example.customviewlib.IndicatorView
+        android:id="@+id/indicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_15"
+        app:dot_radius_selected="@dimen/dp_15"
+        app:dot_radius_unselected="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/view_page"
+        app:layout_constraintEnd_toEndOf="@+id/view_page"
+        app:layout_constraintStart_toStartOf="@+id/view_page" />
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
