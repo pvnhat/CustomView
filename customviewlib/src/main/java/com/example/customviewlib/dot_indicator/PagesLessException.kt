@@ -1,4 +1,4 @@
-package com.example.customviewlib
+package com.example.customviewlib.dot_indicator
 
 /**
  * Created by VanNhat on 05/09/2019.

@@ -1,4 +1,4 @@
-package com.example.customviewlib
+package com.example.customviewlib.dot_indicator
 
 import android.animation.AnimatorSet
 import android.animation.ValueAnimator
@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import androidx.viewpager.widget.ViewPager
+import com.example.customviewlib.R
 
 /**
  * Created by VanNhat on 05/09/2019.
@@ -22,9 +23,12 @@ class IndicatorView @JvmOverloads constructor(
 
     private var viewPager: ViewPager? = null
     private var dots = mutableListOf<DotIndicator>()
-    private var radiusSelected = DEFAULT_RADIUS_SELECTED
-    private var radiusUnSelected = DEFAULT_RADIUS_UNSELECTED
-    private var distance = DEFAULT_DISTANCE
+    private var radiusSelected =
+        DEFAULT_RADIUS_SELECTED
+    private var radiusUnSelected =
+        DEFAULT_RADIUS_UNSELECTED
+    private var distance =
+        DEFAULT_DISTANCE
     private var colorSelected: Int? = null
     private var animateDuration: Long? = null
     private var colorUnSelected: Int? = null
@@ -34,7 +38,10 @@ class IndicatorView @JvmOverloads constructor(
     private var animatorZoomOut: ValueAnimator? = null
 
     init {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.IndicatorView)
+        val typedArray = context.obtainStyledAttributes(
+            attrs,
+            R.styleable.IndicatorView
+        )
         radiusSelected = typedArray.getDimensionPixelSize(
             R.styleable.IndicatorView_dot_radius_selected,
             DEFAULT_RADIUS_SELECTED
@@ -51,7 +58,10 @@ class IndicatorView @JvmOverloads constructor(
             R.styleable.IndicatorView_dot_color_unselected,
             DEFAULT_SELECTED_COLOR
         )
-        distance = typedArray.getInt(R.styleable.IndicatorView_dot_distance, DEFAULT_DISTANCE)
+        distance = typedArray.getInt(
+            R.styleable.IndicatorView_dot_distance,
+            DEFAULT_DISTANCE
+        )
 
         typedArray.recycle()
     }
@@ -166,7 +176,7 @@ class IndicatorView @JvmOverloads constructor(
         val heightSize = MeasureSpec.getSize(heightMeasureSpec)
 
         val width =
-            if (widthMode == MeasureSpec.EXACTLY || widthMode == MeasureSpec.EXACTLY) widthSize else 0
+            if (widthMode == MeasureSpec.EXACTLY) widthSize else 0
         val height = when (heightMode) {
             MeasureSpec.EXACTLY -> heightSize
             MeasureSpec.AT_MOST -> desiredHeight.coerceAtMost(heightSize)
