@@ -1,4 +1,4 @@
-package com.example.customviewlib
+package com.example.customviewlib.dot_indicator
 
 import android.graphics.Canvas
 import android.graphics.Paint

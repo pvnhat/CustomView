@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
 
-    <com.example.customviewlib.IndicatorView
+    <com.example.customviewlib.dot_indicator.IndicatorView
         android:id="@+id/indicator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -82,6 +82,16 @@
         android:layout_height="@dimen/dp_100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <com.example.customviewlib.packman.Packman
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        app:eye_color="#FF0000"
+        app:icon_color="#0019F8"
+        app:layout_constraintBottom_toTopOf="@+id/iv_img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:num_dot="4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,4 +8,10 @@
         <attr name="dot_color_unselected" format="color" />
         <attr name="dot_distance" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="Packman">
+        <attr name="icon_color" format="color" />
+        <attr name="eye_color" format="color" />
+        <attr name="num_dot" format="integer" />
+    </declare-styleable>
 </resources>
